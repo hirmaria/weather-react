@@ -1,5 +1,7 @@
 import "./App.css";
 import SearchEngine from "./SearchEngine";
+import ReactAnimatedWeather from "react-animated-weather";
+import Footer from "./Footer";
 
 function App() {
   return (
@@ -20,7 +22,7 @@ function App() {
       </div>
       <SearchEngine />
       <div className="current-weather ms-4 mt-2 text-start">
-        <div className="row">
+        <div className="row op">
           <ul>
             <li>
               <h3>Lisabon</h3>
@@ -31,9 +33,16 @@ function App() {
         </div>
         <div className="row">
           <div className="col-6">
-            <img src="/" alt="clouds" /> 14 <sup>°C</sup>
+            <ReactAnimatedWeather
+              icon="CLOUDY"
+              color="black"
+              size={50}
+              animate={true}
+            />
+            <span className="current-temp">14</span>
+            <span className="pos">°C</span>
           </div>
-          <div className="col-6">
+          <div className="col-6 op">
             <ul>
               <li>Precipitation: 69%</li>
               <li>Wind: 10km/h</li>
@@ -42,43 +51,63 @@ function App() {
         </div>
       </div>
 
-      <div className="forecast d-flex d-flex justify-content-start">
-        <div className="card m-3">
-          <div className="card-body">
-            <h5 className="card-title">Wen</h5>
-            <img src="" className="card-img-top" alt="..."></img>
-            <p className="card-text">12°</p>
+      <div className="forecast d-flex justify-content-start">
+        <div className="daily m-4">
+          <div className="op mb-2">Wen</div>
+          <div>
+            <ReactAnimatedWeather
+              icon="CLOUDY"
+              color="black"
+              size={50}
+              animate={true}
+            />
           </div>
+          <div className="op">9°</div>
         </div>
-        <div className="card m-3">
-          <div className="card-body">
-            <h5 className="card-title">Thu</h5>
-            <img src="" className="card-img-top" alt="..."></img>
-            <p className="card-text">13°</p>
+        <div className="daily m-4">
+          <div className="op mb-2">Thu</div>
+          <div>
+            <ReactAnimatedWeather
+              icon="RAIN"
+              color="black"
+              size={50}
+              animate={true}
+            />
           </div>
+          <div className="op">14°</div>
         </div>
-        <div className="card m-3">
-          <div className="card-body">
-            <h5 className="card-title">Fri</h5>
-            <img src="" className="card-img-top" alt="..."></img>
-            <p className="card-text">17°</p>
-          </div>
+        <div className="daily m-4">
+          <div className="op mb-2">Fri</div>
+          <ReactAnimatedWeather
+            icon="PARTLY_CLOUDY_DAY"
+            color="black"
+            size={50}
+            animate={true}
+          />
+          <div className="op">12°</div>
         </div>
-        <div className="card m-3">
-          <div className="card-body">
-            <h5 className="card-title">Sat</h5>
-            <img src="" className="card-img-top" alt="..."></img>
-            <p className="card-text">16°</p>
-          </div>
+        <div className="daily m-4">
+          <div className="op mb-2">Sat</div>
+          <ReactAnimatedWeather
+            icon="CLEAR_DAY"
+            color="black"
+            size={50}
+            animate={true}
+          />
+          <div className="op">9°</div>
         </div>
-        <div className="card m-3">
-          <div className="card-body">
-            <h5 className="card-title">Sun</h5>
-            <img src="" className="card-img-top" alt="..."></img>
-            <p className="card-text">16°</p>
-          </div>
+        <div className="daily m-4">
+          <div className="op mb-2">Sun</div>
+          <ReactAnimatedWeather
+            icon="CLEAR_DAY"
+            color="black"
+            size={50}
+            animate={true}
+          />
+          <div className="op">8°</div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
